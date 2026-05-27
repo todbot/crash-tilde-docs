@@ -44,4 +44,4 @@ jobs:
       - name: Deploy via rsync
         if: ${{ inputs.deploy == true }}
         run: |
-          rsync -avzO --delete --exclude='_generated/' -e 'ssh -i ~/.ssh/id_rsa' site/ ${{ secrets.DEPLOY_USER }}@tilde.crashspace.org:/var/www/tilde.crashspace.org/html/
+          rsync -avzO --no-perms --delete --exclude='_generated/' -e 'ssh -i ~/.ssh/id_rsa' site/ ${{ secrets.DEPLOY_USER }}@tilde.crashspace.org:/var/www/tilde.crashspace.org/html/
