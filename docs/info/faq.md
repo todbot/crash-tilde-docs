@@ -2,6 +2,8 @@
 title: faq
 ---
 
+# Frequently Asked Questions
+
       _________________________________________
       / Welcome to tilde.crashspace.org A place \
       \ for web pages                           /
@@ -14,10 +16,23 @@ title: faq
                       
 
 
+[TOC]
+
 
 ## Looking to join? We can't wait to meet you!
 
+<!-- 
 Sign up on our main page [https://tilde.crashspace.org/signup](https://tilde.crashspace.org/signup)!
+-->
+
+[Send us an email!](mailto:virtualplant@crashspace.org) from your @crashspace.org email
+address with the info:
+
+- your preferred unix username / handle
+- your first & last name
+- (optionally) the SSH public key you want to use 
+
+And we'll set up a user for you and email you a temporary password. 
 
 
 ## How did this awesome thing get started?
@@ -25,7 +40,15 @@ Sign up on our main page [https://tilde.crashspace.org/signup](https://tilde.cra
 [Paul Ford wrote an explanation on Medium](https://medium.com/message/tilde-club-i-had-a-couple-drinks-and-woke-up-with-1-000-nerds-a8904f0a2ebf)
 and you can follow along with his thinking [on his tilde blog](http://tilde.club/~ford/).
 
+There's a [whole universe of tilde communities](https://tildeverse.org/), many
+are open to the public, so join a few others and find cool things to bring 
+back here!
+
 ## I'm on Tilde, now what?
+
+Tilde servers are for learning Unix/Linux, HTML/CSS, and "how to write websites like back in the 1990s".
+Because it turns out: all you need to make a public website is a text editor, 
+an SSH client, a login somewhere with a webserver. 
 
 The Tilde community culture is great and we're trying hard to keep it
 that way. We're working on some netiquette outlines for people who are
@@ -41,18 +64,60 @@ Here are some good places to start
 
 -   [the unofficial official tilde primer](http://tilde.club/~anthonydpaul/primer.html)
 -   [some more quick tips](http://tilde.club/~pfhawkins/tipsntricks.html)
+<!--
 -   [help me understand 'screen'](http://tilde.club/~jonathan/screen/)
+-->
 
+<!--
 Who are all these folks and what are they up to?
 ------------------------------------------------
-
 -   [tell me some lore](http://tilde.club/~joeld/tildelore.html)?
 -   [who is online right now](http://tilde.club/~whitneymcn/whoville.shtml)?
 -   [who updated their websites recently](http://tilde.club/tilde.24h.php)?
 -   [can you give me a blogroll](http://tilde.club/~_/)?
+-->
 
-Disk Quotas Now Enforced
-------------------------
+## What programs are installed? 
+
+The server is running Ubuntu 24 server, which gives you the scripting languages:
+
+- bash
+- python3
+- perl
+
+Additionally the following packages for fun and learning have been installed:
+
+- zsh 
+- make
+- finger 
+- talkd talk 
+- fortune
+- figlet
+- toilet 
+- cowsay
+- fortune
+- bsdgames
+- ncdu
+- starship
+- imagemagick
+- aafire
+
+If you'd like to have other programs installed, [let me know!](mailto:tod@crashspace.org)
+
+Learn more about these by doing "man <name>", like "man figlet", or by 
+doing a websearch to learn you can do things like: 
+
+```shell
+todbot@tilde ~ % figlet "linux is cool"
+ _ _                    _                       _
+| (_)_ __  _   ___  __ (_)___    ___ ___   ___ | |
+| | | '_ \| | | \ \/ / | / __|  / __/ _ \ / _ \| |
+| | | | | | |_| |>  <  | \__ \ | (_| (_) | (_) | |
+|_|_|_| |_|\__,_/_/\_\ |_|___/  \___\___/ \___/|_|
+```
+
+
+## Disk Quotas Enforced
 
 To help keep tilde.crashspace.org running smoothly, we've introduced disk quotas. 
 This helps make sure everyone gets their fair share of space and keeps the system in good shape.

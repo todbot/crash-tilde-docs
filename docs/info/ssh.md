@@ -4,6 +4,7 @@ title: How to connect using SSH (secure shell)
 category: tutorials
 ---
 
+# How to connect using SSH (secure shell)
 
 _or, how to tell other computers to do cool things_
 
@@ -23,6 +24,7 @@ ssh user@tilde.crashspace.org
 mosh user@tilde.crashspace.org
 ```
 
+<!--
 ssh is also available on port 443 using the address `ssh.tilde.crashspace.org`:
 
     ssh -p 443 user@ssh.tilde.crashspace.org
@@ -32,6 +34,7 @@ ports.
 
 if you are prompted for a verification code, it's for [2fa](2fa.md).
 it will not work if you haven't set it up. be sure you're using the right ssh keypair.
+-->
 
 ---
 

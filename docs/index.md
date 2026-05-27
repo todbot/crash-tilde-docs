@@ -23,6 +23,8 @@ A tilde server gives you access to a shared Unix computer where you can make
 web pages, learn, and share knowledge. It's a place where working together
 happens naturally, all within a friendly and supportive setting. 
 
+This tilde server is for members of [CrashSpace.org](https://crashspace.org/)
+
 ### News
 
 * This is where news will go
@@ -35,7 +37,9 @@ happens naturally, all within a friendly and supportive setting.
 ### Why?
 
 * Learn Linux / Unix like the 90s!
+
 * Make web pages in a terminal!
+
 * Finally figure out SSH keys!
 
 </div>

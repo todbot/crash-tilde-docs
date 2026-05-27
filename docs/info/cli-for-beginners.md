@@ -6,7 +6,6 @@ category: tutorials
 
 # Command Line for Absolute Beginners
 
-## Table of contents
 [TOC]
 
 So, you want to join a public-access shell community like tilde.crashspace.org,
@@ -469,27 +468,30 @@ just have to try out to see how they work.
 List of Common Programs
 -----------------------
 
-`mutt`, `alpine` - for email
+<!-- `mutt`, `alpine` - for email -->
 
-`wget`, `curl` - for grabbing files from elsewhere
-
-`weechat`, `irssi` - for irc
+`nano`, `vim`, `emac` - text editor
 
 `scp` - for securely moving files between networked systems. this copies
 files (i.e. 'cp') over ssh, hence 'scp'
 
-`lynx` - web browsing
+`wget`, `curl` - for grabbing files from elsewhere
+
+`lynx` - web browsing in a terminal
+
+`weechat` - for irc
 
 `crontab` - scheduling recurring jobs (job = sequence of commands, often
 stored in a script)
 
-`dict` - dictionary for definitions and synonyms
+<!-- `dict` - dictionary for definitions and synonyms -->
 
 `aspell` - a program for spell checking
 
-`motd` - list the message of the day, which on tilde.crashspace.org displays all
-the other commands below
+<!-- `motd` - list the message of the day, which on tilde.crashspace.org displays all
+the other commands below -->
 
+<!--
 some tilde.crashspace.org specific programs
 ---------------------------------
 
@@ -502,6 +504,7 @@ some tilde.crashspace.org specific programs
 `tilde` - a manager for user-submitted scripts
 
 `chat` - open `weechat` preconnected to our irc
+-->
 
 Some shell use cases
 --------------------
@@ -516,7 +519,7 @@ Not suprisingly, you'll find a lot of other intro material online or in
 your local library. Here are a few that have been mentioned by
 tilde.crashspace.org members:
 
-Terminus - an interactive game-like introduction to shell commands
+- Terminus - an interactive game-like introduction to shell commands
 http://www.mprat.org/Terminus/
 
 

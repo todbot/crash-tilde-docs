@@ -22,6 +22,7 @@ markdown_extensions:
   - md_in_html
   - toc:
       permalink: true
+      toc_depth: 2-6
   - pymdownx.superfences
   - pymdownx.snippets:
       base_path: ["."]      # where snippet paths are resolved from

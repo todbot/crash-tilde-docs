@@ -3,6 +3,8 @@ title: code of conduct
 author: todbot
 ---
 
+# Code of Conduct 
+
 > **tl;dr** learn by doing and helping. be excellent to each other. have fun!
 
 [TOC]
@@ -19,6 +21,8 @@ in our community, as well as the consequences for unacceptable behavior.
 
 we invite all those who participate in tilde.crashspace.org to help us create safe
 and positive experiences for everyone.
+
+this tilde server is also bound by the overall [CrashSpace Code of Conduct](https://blog.crashspace.org/about/code-of-conduct/).
 
 
 ## 2. tilde.crashspace.org mission
@@ -107,10 +111,10 @@ we expect all tilde.crashspace.org members to abide by this code of conduct whil
 
 tilde.crashspace.org admins:
 
-* [@todbot](https://tilde.crashspace.org/~todbot/):
-* [@carlynorama](https://tilde.crashspace.org/~carlynorama/):
+* [~todbot](https://tilde.crashspace.org/~todbot/):
+* [~carlynorama](https://tilde.crashspace.org/~carlynorama/):
 
-Or 
+Or [Contact us!](mailto:virtualplant@crashspace.org)
 
 ## 10. license and attribution
 
