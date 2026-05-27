@@ -26,6 +26,10 @@ jobs:
       - name: Build site
         run: mkdocs build
 
+      - name: Test SSH connection
+        if: ${{ inputs.deploy == true }}
+        run: ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ${{ secrets.DEPLOY_USER }}@tilde.crashspace.org echo "SSH OK"
+
       - name: Deploy via rsync
         if: ${{ inputs.deploy == true }}
         env:
