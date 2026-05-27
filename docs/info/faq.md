@@ -19,6 +19,21 @@ title: faq
 [TOC]
 
 
+## What is "tilde"? 
+
+It's this symbol: `~`.  It's home. On multi-user Unix systems in the 1990s at the beginning
+of the web, each person had their own little web area. If your unix system
+was called `www.example.com` and your username was `nancy`, 
+your own website was `www.example.com/~nancy`.  When you logged into that server,
+your website lived at `~/public_html`.  
+Here the `~` meant "my home directory" or `$HOME` as we like to write.
+
+So really "There's no place like `~` "
+
+For more history, [Paul Ford describes](https://medium.com/message/tilde-club-i-had-a-couple-drinks-and-woke-up-with-1-000-nerds-a8904f0a2ebf) describes his accidental launching of the tilde community back
+in 2014.
+
+
 ## Looking to join? We can't wait to meet you!
 
 <!-- 

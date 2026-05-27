@@ -42,6 +42,8 @@ This tilde server is for members of [CrashSpace.org](https://crashspace.org/)
 
 * Finally figure out SSH keys!
 
+* [Get started now!](getting-started.md)
+
 </div>
 </div>
 
