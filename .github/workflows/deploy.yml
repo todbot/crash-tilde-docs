@@ -26,11 +26,7 @@ jobs:
       - name: Build site
         run: mkdocs build
 
-      - name: Test SSH connection
-        if: ${{ inputs.deploy == true }}
-        run: ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ${{ secrets.DEPLOY_USER }}@tilde.crashspace.org echo "SSH OK"
-
-      - name: Deploy via rsync
+      - name: Setup SSH key
         if: ${{ inputs.deploy == true }}
         env:
           DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
@@ -39,4 +35,12 @@ jobs:
           echo "$DEPLOY_KEY" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -H tilde.crashspace.org >> ~/.ssh/known_hosts
+
+      - name: Test SSH connection
+        if: ${{ inputs.deploy == true }}
+        run: ssh -i ~/.ssh/id_rsa ${{ secrets.DEPLOY_USER }}@tilde.crashspace.org echo "SSH OK"
+
+      - name: Deploy via rsync
+        if: ${{ inputs.deploy == true }}
+        run: |
           rsync -avz --delete --exclude='_generated/' -e 'ssh -i ~/.ssh/id_rsa' site/ ${{ secrets.DEPLOY_USER }}@tilde.crashspace.org:/var/www/tilde.crashspace.org/html/
