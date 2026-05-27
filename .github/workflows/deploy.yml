@@ -32,7 +32,7 @@ jobs:
           DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
         run: |
           mkdir -p ~/.ssh
-          echo "$DEPLOY_KEY" > ~/.ssh/id_ed25519
-          chmod 600 ~/.ssh/id_ed25519
+          echo "$DEPLOY_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -H tilde.crashspace.org >> ~/.ssh/known_hosts
-          rsync -avz --delete --exclude='_generated/' site/ ${{ secrets.DEPLOY_USER }}@tilde.crashspace.org:/var/www/tilde.crashspace.org/html/
+          rsync -avz --delete --exclude='_generated/' -e 'ssh -i ~/.ssh/id_rsa' site/ ${{ secrets.DEPLOY_USER }}@tilde.crashspace.org:/var/www/tilde.crashspace.org/html/

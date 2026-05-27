@@ -15,7 +15,6 @@ title: tilde.crashspace.org
 
 
 <div class="two-pane bordered" markdown="1">
-
 <div class="bordered" markdown="1">
 
 ### What?
@@ -31,7 +30,6 @@ happens naturally, all within a friendly and supportive setting.
 * news
 
 </div>
-
 <div class="bordered" markdown="1">
 
 ### Why?
@@ -41,7 +39,6 @@ happens naturally, all within a friendly and supportive setting.
 * Finally figure out SSH keys!
 
 </div>
-
 </div>
 
 --- 
