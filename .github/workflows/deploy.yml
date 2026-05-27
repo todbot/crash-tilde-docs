@@ -38,7 +38,10 @@ jobs:
 
       - name: Test SSH connection
         if: ${{ inputs.deploy == true }}
-        run: ssh -i ~/.ssh/id_rsa ${{ secrets.DEPLOY_USER }}@tilde.crashspace.org echo "SSH OK"
+        run: |
+          head -1 ~/.ssh/id_rsa
+          wc -l ~/.ssh/id_rsa
+          ssh -vvv -i ~/.ssh/id_rsa ${{ secrets.DEPLOY_USER }}@tilde.crashspace.org echo "SSH OK"
 
       - name: Deploy via rsync
         if: ${{ inputs.deploy == true }}
