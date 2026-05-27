@@ -11,7 +11,7 @@ _or, how to tell other computers to do cool things_
 
 > all users are required to use an ssh keypair for login, or will be required
 > to proceed with manual account recovery.
-> you can also set up [two-factor authentication](2fa.html) to log in without your
+> you can also set up [two-factor authentication](2fa.md) to log in without your
 > keypair.
 
 ## tilde.crashspace.org details
@@ -30,15 +30,15 @@ ssh is also available on port 443 using the address `ssh.tilde.crashspace.org`:
 this is useful if you're on a limited public network that blocks non-http
 ports.
 
-if you are prompted for a verification code, it's for [2fa](2fa.html).
+if you are prompted for a verification code, it's for [2fa](2fa.md).
 it will not work if you haven't set it up. be sure you're using the right ssh keypair.
 
 ---
 
 ## intro
 
-** if you just want to get right to a tutorial you can
-[skip over this background info](#how-to-make-an-ssh-key)**
+*if you just want to get right to a tutorial you can
+[skip over this background info](#how-to-make-an-ssh-key)*
 
 while [tilde.crashspace.org](https://tilde.crashspace.org) is accessible on the web and features
 lovely web pages written by its users, most interaction with tilde.crashspace.org takes
@@ -99,41 +99,44 @@ pick your fighter: [[mac](#mac)] | [[windows](#windows)] | [[linux](#linux)]
 
 #### generating your keypair
 
-1. open terminal (it's in `/Applications/Utilities`)
+1. open Terminal (it's in `/Applications/Utilities`)
 
 2. create your .ssh directory:
 
-```bash
-mkdir -m 700 ~/.ssh
-```
+    ```bash
+    mkdir -m 700 ~/.ssh
+    ```
 
 3. create your keypair:
 
-```bash
-ssh-keygen -t ed25519 -a 100
-```
+    ```bash
+    ssh-keygen -t ed25519 -a 100
+    ```
 
 4. if you press enter to accept the defaults, your public and private key will
 be located at `~/.ssh/id_ed25519.pub` and `~/.ssh/id_ed25519`
 
-`cat ~/.ssh/id_ed25519.pub`
+    ```bash
+    cat ~/.ssh/id_ed25519.pub
+    ```
 
 5. copy the output of the last command and paste it in the sshkey field on the
 signup form (or email it to [~root](mailto:root@tilde.crashspace.org) if you already have an account)
+
 
 #### using your keypair
 
 once an admin approves your signup, you can join the tilde.crashspace.org
 
-6. open terminal (it's in `/Applications/Utilities`)
+6. open Terminal (it's in `/Applications/Utilities`)
 
 7. `ssh` to tilde.crashspace.org:
 
-```bash
-ssh username@tilde.crashspace.org
-```
+    ```bash
+    ssh username@tilde.crashspace.org
+    ```
 
-where username is your username (~benharri would use `ssh benharri@tilde.crashspace.org`)
+    where username is your username (~benharri would use `ssh benharri@tilde.crashspace.org`)
 
 8. profit???
 
@@ -143,29 +146,29 @@ where username is your username (~benharri would use `ssh benharri@tilde.crashsp
 
 #### Ensure OpenSSH is installed
 
-    1. Open Settings, select Apps, then select Optional Features
-    1. Scan the list to see if the OpenSSH is already installed. If not, at the top of the page, select Add a feature, then...
-    1. Find OpenSSH Client, then select Install
+1. Open Settings, select Apps, then select Optional Features
+2. Scan the list to see if the OpenSSH is already installed. If not, at the top of the page, select Add a feature, then...
+3. Find OpenSSH Client, then select Install
 
-#### generating your keypair
+#### Generating your keypair
 
 1. open your command prompt (Start -> Search -> type "cmd")
 
 2. create your keypair:
 
-```cmd
-ssh-keygen -t ed25519 -a 100
-```
+    ```cmd
+    ssh-keygen -t ed25519 -a 100
+    ```
 
-3. If you press enter to accept the defaults, your public and private key will be located at %USERPROFILE%\\.ssh\\id_ed25519.pub and %USERPROFILE%\\.ssh\\id_ed25519 respectively.
+3. If you press enter to accept the defaults, your public and private key will be located at `%USERPROFILE%\\.ssh\\id_ed25519.pub` and `%USERPROFILE%\\.ssh\\id_ed25519` respectively.
 
-Note: %USERPROFILE% is a short code that the computer expands to mean C:\\Users\\your_name\\, or whatever the relevant path is to your user's main folder.
+    Note: %USERPROFILE% is a short code that the computer expands to mean C:\\Users\\your_name\\, or whatever the relevant path is to your user's main folder.
 
-Next we will open up the public key so we can copy its contents.
+    Next we will open up the public key so we can copy its contents.
 
-```cmd
-notepad %USERPROFILE%\.ssh\id_ed25519.pub
-```
+    ```cmd
+    notepad %USERPROFILE%\.ssh\id_ed25519.pub
+    ```
 
 4. Copy the text of the pubkey that opens in Notepad and paste it in the sshkey field on the signup form or email it to the relevant sign-up address for the tilde you are joining.
 
@@ -173,24 +176,23 @@ notepad %USERPROFILE%\.ssh\id_ed25519.pub
 
 once an admin approves your signup, you can join the tilde.crashspace.org
 
-5. open command prompt (Start -> Search -> type "cmd")
+1. open command prompt (Start -> Search -> type "cmd")
 
-6. `ssh` to tilde.crashspace.org:
+2. `ssh` to tilde.crashspace.org:
 
-```cmd
-ssh username@tilde.crashspace.org
-```
+    ```cmd
+    ssh username@tilde.crashspace.org
+    ```
 
-where username is your username (~benharri would use `ssh benharri@tilde.crashspace.org`)
+    where username is your username (~benharri would use `ssh benharri@tilde.crashspace.org`)
 
+    Note: If you generated your key to the location above (%USERPROFILE%\\.ssh\\...) then you will be able to SSH to your tilde server without having to specify the location of the key. That folder is the default used by SSH and it will be found automatically. If you generated your keys in a different location or moved them, you will need to specify the full path to the private key.
 
-Note: If you generated your key to the location above (%USERPROFILE%\\.ssh\\...) then you will be able to SSH to your tilde server without having to specify the location of the key. That folder is the default used by SSH and it will be found automatically. If you generated your keys in a different location or moved them, you will need to specify the full path to the private key.
+    ```cmd
+    ssh -i c:\path\to\my\private\key username@your.tilde
+    ```
 
-```cmd
-ssh -i c:\path\to\my\private\key username@your.tilde
-```
-
-7. profit???
+3. profit???
 
 ---
 
@@ -203,25 +205,26 @@ in almost all cases. if they're not, look up how to install ssh for your distro.
 
 1. make sure you have a `~/.ssh` directory
 
-```bash
-mkdir -m 700 ~/.ssh
-```
+    ```bash
+    mkdir -m 700 ~/.ssh
+    ```
 
 2. create your keypair
 
-```bash
-ssh-keygen -t ed25519 -a 100
-```
+    ```bash
+    ssh-keygen -t ed25519 -a 100
+    ```
 
 3. if you press enter to accept the defaults, your public and private key will
 be located at `~/.ssh/id_ed25519.pub` and `~/.ssh/id_ed25519`
 
-```bash
-cat ~/.ssh/id_ed25519.pub
-```
+    ```bash
+    cat ~/.ssh/id_ed25519.pub
+    ```
 
 4. copy the output of the last command and paste it in the sshkey field on the
 signup form (or email it to [root@tilde.crashspace.org](mailto:root@tilde.crashspace.org) if you already have an account)
+
 
 #### using your keypair
 
@@ -231,11 +234,11 @@ once an admin approves your signup, you can join the tilde.crashspace.org
 
 6. `ssh` to tilde.crashspace.org:
 
-where username is your username (~benharri would use `ssh benharri@tilde.crashspace.org`)
+    where username is your username (~benharri would use `ssh benharri@tilde.crashspace.org`)
 
-```bash
-ssh username@tilde.crashspace.org
-```
+    ```bash
+    ssh username@tilde.crashspace.org
+    ```
 
 7. profit???
 

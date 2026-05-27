@@ -3,6 +3,6 @@
 # Info
 
 * [FAQ](./info/faq.md)
-* [code of conduct](./info/code-of-conduct.md)
-* [how to ssh](./info/ssh.md)
-
+* [Code of Conduct](./info/code-of-conduct.md)
+* [How to SSH](./info/ssh.md)
+* [Command line for absolute beginners](./info/cli-for-beginners.md)

@@ -1,4 +1,64 @@
+/* --- 1. Phosphor palette ------------------------------------
+   The whole look keys off one color. Green is the default.
+   For an amber (old IBM/Hercules) look, swap the two values in
+   the AMBER block below and update the glow rgbas in section 2. */
 
+/* AMBER VARIANT — to use, uncomment and also switch the rgba()
+   glow colors in section 2 from (51,255,102) to (255,176,0):
+*/
+:root {
+  --phosphor:     #ffb000;
+  --phosphor-lit: #ffcf5c;
+  --phosphor-dim: #b37a00;
+  /* --background-color: #0a0600; */
+  --background-color: #1a1000;
+  --code-bg-color:    #2e1e00;
+}
+
+
+/* --- 2. Phosphor glow on text -------------------------------
+   NOTE: glow strength = the blur radius (the `Npx`) and the
+   alpha (last number) in each shadow. Bigger blur / higher
+   alpha = more bloom. Drop these if small text looks smeared. */
+
+body {
+  font-family: 'IBM Plex Mono', 'Consolas', 'DejaVu Sans Mono', monospace;
+  color: var(--phosphor);
+  text-shadow:
+    0 0 1px rgba(255, 176, 0, 0.45),
+    0 0 4px rgba(255, 176, 0, 0.28);
+}
+
+h1, h2, h3, h4,
+a, strong, b {
+  text-shadow:
+    0 0 2px rgba(255, 135, 0, 0.60),
+    0 0 9px rgba(255, 176, 0, 0.45);
+}
+
+/* code keeps a lighter glow so it stays crisp/legible */
+code, pre, kbd .terminal pre {
+  text-shadow: 0 0 2px rgba(255, 176, 0, 0.32);
+}
+
+code {
+   padding: 0.5em;
+}
+
+/* phosphor-tinted text selection */
+::selection {
+  background: rgba(255, 151, 0, 0.30);
+  color: #eaffea;
+}
+
+pre {
+  border: 1px solid var(--phosphor, #faa30a);
+  box-shadow:
+    0 0 5px rgba(255, 176, 0, 0.25),         /* outer phosphor glow   */
+    inset 0 0 10px rgba(255, 176, 0, 0.07);  /* faint inner screen lit */
+}
+
+/* gradient */
 body::before {
     content: "";
     position: fixed;
@@ -32,9 +92,6 @@ body::after {
     );
 }
 
-body {
-    font-family: 'IBM Plex Mono', 'Consolas', 'DejaVu Sans Mono', monospace;
-}
 
 /* --- Restore classic HTML heading hierarchy --------------- */
 .terminal h1 { font-size: 2.0em;  line-height: 1.2; margin: 0.67em 0; }
@@ -87,60 +144,16 @@ h6:hover .headerlink,
     padding: 0.5em;
 }
 
-/* --- 1. Phosphor palette ------------------------------------
-   The whole look keys off one color. Green is the default.
-   For an amber (old IBM/Hercules) look, swap the two values in
-   the AMBER block below and update the glow rgbas in section 2. */
-
-/* AMBER VARIANT — to use, uncomment and also switch the rgba()
-   glow colors in section 2 from (51,255,102) to (255,176,0):
-*/
-:root {
-  --phosphor:     #ffb000;
-  --phosphor-lit: #ffcf5c;
-  --phosphor-dim: #b37a00;
-  --background-color: #0a0600;
-  --code-bg-color:    #140d00;
-}
-
-
-/* --- 2. Phosphor glow on text -------------------------------
-   NOTE: glow strength = the blur radius (the `Npx`) and the
-   alpha (last number) in each shadow. Bigger blur / higher
-   alpha = more bloom. Drop these if small text looks smeared. */
-
-body {
-  color: var(--phosphor);
-  text-shadow:
-    0 0 1px rgba(255, 176, 0, 0.45),
-    0 0 4px rgba(255, 176, 0, 0.28);
-}
-
-h1, h2, h3, h4,
-a, strong, b {
-  text-shadow:
-    0 0 2px rgba(255, 135, 0, 0.60),
-    0 0 9px rgba(255, 176, 0, 0.45);
-}
-
-/* code keeps a lighter glow so it stays crisp/legible */
-code, pre, kbd .terminal pre {
-  text-shadow: 0 0 2px rgba(255, 176, 0, 0.32);
-}
-
-/* phosphor-tinted text selection */
-::selection {
-  background: rgba(255, 151, 0, 0.30);
-  color: #eaffea;
-}
-
-pre {
-  border: 1px solid var(--phosphor, #faa30a);
-  box-shadow:
-    0 0 5px rgba(255, 176, 0, 0.25),         /* outer phosphor glow   */
-    inset 0 0 10px rgba(255, 176, 0, 0.07);  /* faint inner screen lit */
+pre.banner {
+    line-height: 1.0;
+ /* font-family: 'IBM Plex Mono', 'Consolas', 'DejaVu Sans Mono', monospace; */
 }
 
 pre code {
   overflow-x: auto;     /* scrollbar only appears if a line truly overflows */
 }
+
+  /* ol li > p { */
+  /*   display: inline; */
+  /* } */
+

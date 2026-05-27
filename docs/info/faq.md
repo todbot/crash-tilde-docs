@@ -17,19 +17,17 @@ title: faq
 
 ## Looking to join? We can't wait to meet you!
 
-Sign up on our main page [https://tilde.club/signup](https://tilde.club/signup)!
+Sign up on our main page [https://tilde.crashspace.org/signup](https://tilde.crashspace.org/signup)!
 
 
 ## How did this awesome thing get started?
 
-[Paul wrote an explanation on
-Medium](https://medium.com/message/tilde-club-i-had-a-couple-drinks-and-woke-up-with-1-000-nerds-a8904f0a2ebf)
-and you can follow along with his thinking [on his tilde
-blog](http://tilde.club/~ford/).
+[Paul Ford wrote an explanation on Medium](https://medium.com/message/tilde-club-i-had-a-couple-drinks-and-woke-up-with-1-000-nerds-a8904f0a2ebf)
+and you can follow along with his thinking [on his tilde blog](http://tilde.club/~ford/).
 
 ## I'm on Tilde, now what?
 
-Tilde has a great community culture and we're trying hard to keep it
+The Tilde community culture is great and we're trying hard to keep it
 that way. We're working on some netiquette outlines for people who are
 new to all of this. In the meantime...
 
@@ -43,7 +41,6 @@ Here are some good places to start
 
 -   [the unofficial official tilde primer](http://tilde.club/~anthonydpaul/primer.html)
 -   [some more quick tips](http://tilde.club/~pfhawkins/tipsntricks.html)
--   [how do I usenet in tilde.club](http://tilde.club/wiki/usenet-news.html)?
 -   [help me understand 'screen'](http://tilde.club/~jonathan/screen/)
 
 Who are all these folks and what are they up to?
