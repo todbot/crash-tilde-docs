@@ -1,0 +1,36 @@
+site_name: https://tilde.crashspace.org/
+theme:
+  name: terminal
+  palette: gruvbox_dark            # try: dark, gruvbox_dark, sans_dark, default
+  features:
+    - navigation.side.hide # drop the left sidebar — clean for a few-page site
+    #- navigation.side.indexes   # makes the "Docs" header itself link to docs.md
+  
+extra_css:
+  - css/extra.css
+  
+# Top-nav pages, left to right
+nav:
+  - Home: index.md
+  - Getting Started: getting-started.md
+  - Status: status.md
+  - Info: info.md
+
+markdown_extensions:
+  - admonition
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.snippets:
+      base_path: ["."]      # where snippet paths are resolved from
+        
+plugins:
+  - search
+  
+#exclude_docs: |
+#  _generated/
+
+not_in_nav: |
+  _generated/
+  

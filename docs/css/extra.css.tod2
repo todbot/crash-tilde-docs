@@ -1,0 +1,105 @@
+/* ============================================================
+   CRT / phosphor effect for "Terminal for MkDocs"
+   ------------------------------------------------------------
+   Install:
+     1. Save this file at  docs/css/extra.css
+     2. In mkdocs.yml:
+          extra_css:
+            - css/extra.css
+     3. Restart `mkdocs serve` (extra_css is not hot-reloaded).
+
+   Static effects only — no flicker, no animation.
+   Every effect has a tunable knob; see the NOTES on each block.
+   ============================================================ */
+
+
+/* --- 1. Phosphor palette ------------------------------------
+   The whole look keys off one color. Green is the default.
+   For an amber (old IBM/Hercules) look, swap the two values in
+   the AMBER block below and update the glow rgbas in section 2. */
+
+:root {
+  --phosphor:      #33ff66;   /* main text / glow color        */
+  --phosphor-lit:  #5fff8f;   /* brighter: links, headings     */
+  --phosphor-dim:  #1ea34a;   /* muted: borders, secondary text */
+
+  /* terminal.css theme variables (override the dark palette) */
+  --background-color: #000800;  /* near-black with a faint green cast */
+  --font-color:       var(--phosphor);
+  --primary-color:    var(--phosphor-lit);
+  --secondary-color:  var(--phosphor-dim);
+  --code-bg-color:    #021202;
+}
+
+/* AMBER VARIANT — to use, uncomment and also switch the rgba()
+   glow colors in section 2 from (51,255,102) to (255,176,0):
+:root {
+  --phosphor:     #ffb000;
+  --phosphor-lit: #ffcf5c;
+  --phosphor-dim: #b37a00;
+  --background-color: #0a0600;
+  --code-bg-color:    #140d00;
+}
+*/
+
+
+/* --- 2. Phosphor glow on text -------------------------------
+   NOTE: glow strength = the blur radius (the `Npx`) and the
+   alpha (last number) in each shadow. Bigger blur / higher
+   alpha = more bloom. Drop these if small text looks smeared. */
+
+body {
+  color: var(--phosphor);
+  text-shadow:
+    0 0 1px rgba(51, 255, 102, 0.45),
+    0 0 4px rgba(51, 255, 102, 0.28);
+}
+
+h1, h2, h3, h4,
+a, strong, b {
+  text-shadow:
+    0 0 2px rgba(95, 255, 143, 0.60),
+    0 0 9px rgba(51, 255, 102, 0.45);
+}
+
+/* code keeps a lighter glow so it stays crisp/legible */
+code, pre, kbd {
+  text-shadow: 0 0 2px rgba(51, 255, 102, 0.32);
+}
+
+/* phosphor-tinted text selection */
+::selection {
+  background: rgba(51, 255, 102, 0.30);
+  color: #eaffea;
+}
+
+
+/* --- 3. Scanlines + screen vignette (static overlay) --------
+   One fixed, click-through overlay carrying two stacked layers:
+   crisp horizontal scanlines, then a soft darkening at the edges.
+
+   NOTE — scanline darkness: the 0.22 alpha in the gradient.
+   NOTE — scanline spacing: the 2px / 3px stops (1px dark line
+          every 3px). Widen both numbers for chunkier lines.
+   NOTE — vignette strength: the 0.45 alpha in the radial layer. */
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;   /* never blocks clicks, scroll, or selection */
+  z-index: 9999;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0px,
+      transparent 2px,
+      rgba(0, 0, 0, 0.22) 2px,
+      rgba(0, 0, 0, 0.22) 3px
+    ),
+    radial-gradient(
+      ellipse at center,
+      transparent 60%,
+      rgba(0, 0, 0, 0.45) 100%
+    );
+}

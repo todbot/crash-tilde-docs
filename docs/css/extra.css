@@ -1,0 +1,146 @@
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    background: repeating-linear-gradient(
+    30deg,
+    rgba(0, 0, 0, 0.15) 0px,
+    rgba(0, 0, 0, 0.15) 3px,
+    transparent 1px,
+    transparent 5px
+    );
+}
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9998;
+    background: radial-gradient(
+    ellipse at center,
+    transparent 60%,
+    rgba(0, 0, 0, 0.4) 100%
+    );
+}
+
+body {
+    font-family: 'IBM Plex Mono', 'Consolas', 'DejaVu Sans Mono', monospace;
+}
+
+/* --- Restore classic HTML heading hierarchy --------------- */
+.terminal h1 { font-size: 2.0em;  line-height: 1.2; margin: 0.67em 0; }
+.terminal h2 { font-size: 1.5em;  line-height: 1.2; margin: 0.83em 0; }
+.terminal h3 { font-size: 1.25em; line-height: 1.3; margin: 1.0em  0; }
+.terminal h4 { font-size: 1.0em;  line-height: 1.3; margin: 1.33em 0; }
+.terminal h5 { font-size: 0.85em; line-height: 1.4; margin: 1.5em  0; }
+.terminal h6 { font-size: 0.75em; line-height: 1.4; margin: 1.5em  0; }
+
+/* --- Permalink anchors: reveal only on heading hover ------ */
+.headerlink {
+  opacity: 0;
+  transition: opacity 0.15s ease-in-out;
+}
+
+h1:hover .headerlink,
+h2:hover .headerlink,
+h3:hover .headerlink,
+h4:hover .headerlink,
+h5:hover .headerlink,
+h6:hover .headerlink,
+.headerlink:focus {           /* keep it reachable by keyboard */
+  opacity: 1;
+}
+
+
+/* --- Two-pane layout -------------------------------------- */
+/* .two-pane { */
+/*   display: grid; */
+/*   grid-template-columns: 1fr 1fr;   /\* try 2fr 1fr for an asymmetric split *\/ */
+/*   gap: 2em; */
+/*   align-items: start; */
+/* } */
+
+
+.two-pane {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2em;
+  align-items: stretch;   /* was: start — this makes both panes match the taller one */
+}
+
+/* collapse to a single column on narrow screens */
+@media (max-width: 45em) {
+  .two-pane { grid-template-columns: 1fr; }
+}
+
+.bordered {
+    border: 1px solid orange;
+    padding: 0.5em;
+}
+
+/* --- 1. Phosphor palette ------------------------------------
+   The whole look keys off one color. Green is the default.
+   For an amber (old IBM/Hercules) look, swap the two values in
+   the AMBER block below and update the glow rgbas in section 2. */
+
+/* AMBER VARIANT — to use, uncomment and also switch the rgba()
+   glow colors in section 2 from (51,255,102) to (255,176,0):
+*/
+:root {
+  --phosphor:     #ffb000;
+  --phosphor-lit: #ffcf5c;
+  --phosphor-dim: #b37a00;
+  --background-color: #0a0600;
+  --code-bg-color:    #140d00;
+}
+
+
+/* --- 2. Phosphor glow on text -------------------------------
+   NOTE: glow strength = the blur radius (the `Npx`) and the
+   alpha (last number) in each shadow. Bigger blur / higher
+   alpha = more bloom. Drop these if small text looks smeared. */
+
+body {
+  color: var(--phosphor);
+  text-shadow:
+    0 0 1px rgba(255, 176, 0, 0.45),
+    0 0 4px rgba(255, 176, 0, 0.28);
+}
+
+h1, h2, h3, h4,
+a, strong, b {
+  text-shadow:
+    0 0 2px rgba(255, 135, 0, 0.60),
+    0 0 9px rgba(255, 176, 0, 0.45);
+}
+
+/* code keeps a lighter glow so it stays crisp/legible */
+code, pre, kbd .terminal pre {
+  text-shadow: 0 0 2px rgba(255, 176, 0, 0.32);
+}
+
+/* phosphor-tinted text selection */
+::selection {
+  background: rgba(255, 151, 0, 0.30);
+  color: #eaffea;
+}
+
+pre {
+  border: 1px solid var(--phosphor, #faa30a);
+  box-shadow:
+    0 0 5px rgba(255, 176, 0, 0.25),         /* outer phosphor glow   */
+    inset 0 0 10px rgba(255, 176, 0, 0.07);  /* faint inner screen lit */
+}
+
+pre code {
+  overflow-x: auto;     /* scrollbar only appears if a line truly overflows */
+}
