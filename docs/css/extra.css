@@ -149,6 +149,10 @@ pre.banner {
  /* font-family: 'IBM Plex Mono', 'Consolas', 'DejaVu Sans Mono', monospace; */
 }
 
+@media (max-width: 700px) {
+    pre.banner { display: none; }
+}
+
 pre code {
   overflow-x: auto;     /* scrollbar only appears if a line truly overflows */
 }
