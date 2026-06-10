@@ -122,6 +122,16 @@ again, see our [SSH page](ssh.md).
 `logout` is a simple command you can use to log out of a shell. You
 could also use `exit`.
 
+### Changing your password
+
+You were given a temporary password when your username was created.
+You should probably change that. Use the `passwd` command for that. 
+
+> `passwd`
+
+It will ask you your current password and your new password twice. 
+Pick a "good" password (16+ characters, mix of letter, numbers, and symbols)
+
 ### Listing Files, with `ls`
 
 To list the files in a directory, simply type `ls`. This will print a
