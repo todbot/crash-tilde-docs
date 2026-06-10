@@ -526,11 +526,11 @@ Other Intro-to-Linux Material
 -----------------------------
 
 Not suprisingly, you'll find a lot of other intro material online or in
-your local library. Here are a few that have been mentioned by
-tilde.crashspace.org members:
+your local library. Here are a few that have been mentioned by other
+tilde members:
 
 - Terminus - an interactive game-like introduction to shell commands
-http://www.mprat.org/Terminus/
+[http://www.mprat.org/Terminus/](http://www.mprat.org/Terminus/)
 
 
 ---
